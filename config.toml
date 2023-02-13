@@ -2,6 +2,7 @@ baseURL = 'https://eki.moe/'
 DefaultContentLanguage = "zh"
 languageCode = 'zh-cn'
 title = "Eki's Home"
+copyright = "2023 Eki"
 theme = "diary"
 
 [taxonomies]
@@ -18,11 +19,28 @@ name = "Tags"
 weight = 2
 
 [[menu.main]]
+url = "https://dn42.eki.moe"
+name = "DN42"
+weight = 3
+
+[[menu.main]]
 url = "/about"
 name = "About"
-weight = 3
+weight = 4
 
 [[menu.main]]
 url = "/index.xml"
 name = "RSS"
-weight = 4
+weight = 5
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
