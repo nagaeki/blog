@@ -14,3 +14,8 @@ hidden: true
 需要找到我？
 - [m@eki.moe](mailto:m@eki.moe)
 - Telegram: [@nagaeki](https://nagaeki.t.me/)
+
+本站已加入 [internet.nl](https://internet.nl) [双100%名人堂](https://internet.nl/halloffame/)。
+
+![internet.nl](/images/about/100-percent-website-test-internet-nl.png)
+![internet.nl](/images/about/100-percent-email-test-internet-nl.png)
