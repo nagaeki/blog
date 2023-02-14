@@ -1,7 +1,7 @@
 ---
 title: "在 internet.nl 上拿到满分"
 date: 2023-02-13T17:05:14+08:00
-description: "但是真的那么有用吗"
+description: "但是真的那么有用吗？"
 tags: [web,self-host]
 featured_image: "/images/posts/full-score-on-internet-nl/index.png"
 draft: false

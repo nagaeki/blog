@@ -1,5 +1,5 @@
 ---
-title: "Nginx禁用源站IP对网站的访问"
+title: "Nginx 禁用源站 IP 对网站的访问"
 date: 2022-12-27T23:26:06+08:00
 description: "关于群友忘了这件事然后机器人被找到源站被打这件事。"
 draft: false

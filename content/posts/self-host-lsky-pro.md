@@ -1,5 +1,5 @@
 ---
-title: "部署Lsky-Pro自建图床搭配nsfwjs自动审核"
+title: "部署 Lsky-Pro 自建图床搭配 nsfwjs 自动审核"
 date: 2022-12-14T19:54:08+08:00
 description: "为朋友的女装找一个新家。"
 draft: false
