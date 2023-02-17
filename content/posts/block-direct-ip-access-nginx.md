@@ -20,29 +20,28 @@ featured_image: "/images/posts/block-direct-ip-access-nginx/index.png"
 
 首先需要确定安装的是Nginx 1.19.4及以上版本，可使用nginx -v命令查看。
 
-处理此问题时Debian Stable仍在发行1.18.0版本，因此使用Nginx官网源安装新版。参考 [Nginx官网安装步骤](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)。  
-写入以下内容至 /etc/apt/sources.list.d/nginx.list
+处理此问题时Debian Stable仍在发行1.18.0版本，因此使用Nginx官网源安装新版。参考 [Nginx官网安装步骤](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)。
 
-    deb https://nginx.org/packages/debian/ bullseye nginx
-    deb-src https://nginx.org/packages/debian/ bullseye nginx
+获得 nginx 签名密钥并添加信任
 
-可能会遇到以下错误：
+    wget https://nginx.org/keys/nginx_signing.key 
+    apt-key add nginx_signing.key
 
-    W: GPG error: https://nginx.org/packages/debian bullseye InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ABF5BD827BD9BF62
-    E: The repository 'https://nginx.org/packages/debian bullseye InRelease' is not signed.
-    N: Updating from such a repository can't be done securely, and is therefore disabled by default.
-    N: See apt-secure(8) manpage for repository creation and user configuration details.
+添加 nginx 源
 
-我能确定这是Nginx官方源，因此直接信任:
+    >/etc/apt/sources.list.d/nginx.conf
+    deb https://nginx.org/packages/mainline/debian/ bullseye nginx
+    deb-src https://nginx.org/packages/mainline/debian bullseye nginx
 
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
+如果需要卸载原有的 nginx 安装
 
-把 $key 换成上面的代码，如 `ABF5BD827BD9BF62` ，再更新一次。  
-更新源后重新安装Nginx即安装最新版，重启Nginx服务即可。
+    apt purge nginx nginx-common
+
+随后安装并重启 nginx 服务即可。
 
 ## 启用default配置
 
-在Nginx的配置文件夹中写一个default文件，我选择位于 `/etc/nginx/sites-available` ，根据习惯即可。
+在 nginx 的配置文件夹中写一个default文件，我选择位于 `/etc/nginx/conf.d/default.conf` ，根据习惯即可。
 
     server {
         listen 80 default_server;
@@ -54,7 +53,7 @@ featured_image: "/images/posts/block-direct-ip-access-nginx/index.png"
 
 解释：server_name _ 针对一切没有在本机匹配的域名，444响应让Nginx直接不响应内容。
 
-记得启用此配置，软链接到 `/etc/nginx/sites-enabled` 并刷新Nginx。
+记得启用此配置并刷新Nginx。
 
 ## 针对HTTPS
 
