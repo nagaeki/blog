@@ -19,3 +19,5 @@ hidden: true
 
 ![internet.nl](/images/about/100-percent-website-test-internet-nl.png)
 ![internet.nl](/images/about/100-percent-email-test-internet-nl.png)
+
+更新：自2023年3月9日起，本站托管于 Cloudflare Pages 服务，网站100%无法保持，但邮件100%依然有效。
