@@ -12,7 +12,7 @@ hidden: true
 喜欢猫猫。对各种各样的东西都感兴趣，会尽量尝试。
 
 需要找到我？
-- [m@eki.moe](mailto:m@eki.moe)
+- [i@eki.moe](mailto:i@eki.moe)
 - Telegram: [@nagaeki](https://nagaeki.t.me/)
 
 本站已加入 [internet.nl](https://internet.nl) [双100%名人堂](https://internet.nl/halloffame/)。
