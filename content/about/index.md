@@ -15,11 +15,9 @@ hidden: true
 - [i@eki.moe](mailto:i@eki.moe)
 - Telegram: [@nagaeki](https://nagaeki.t.me/)
 
-本站已加入 [internet.nl](https://internet.nl) [双100%名人堂](https://internet.nl/halloffame/)。
-
-GPG Key available at [gpg_key.txt](/key.txt).
+本站曾经加入 [internet.nl](https://internet.nl) [双100%名人堂](https://internet.nl/halloffame/)。当前为保证兼容性已不再符合要求。
 
 ![internet.nl](/images/about/100-percent-website-test-internet-nl.png)
 ![internet.nl](/images/about/100-percent-email-test-internet-nl.png)
 
-更新：自2023年3月9日起，本站托管于 Cloudflare Pages 服务，网站100%无法保持，但邮件100%依然有效。
+GPG Key available at [gpg_key.txt](/key.txt).
