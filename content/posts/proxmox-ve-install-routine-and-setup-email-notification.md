@@ -168,7 +168,7 @@ If you need to fix it, you can find it at Datacenter -> Permissions -> Users -> 
 
 To test them out, just pull your drives out and wait for a email alert to arrive.
 
-# Refrences & Sources
+# References & Sources
 
 - [Proxmoxのpostfixを設定する](https://zenn.dev/yakumo/articles/2919b755c6ce7a)
 - [Techno Tim: Set up alerts in Proxmox before it's too late!](https://technotim.live/posts/proxmox-alerts/)

@@ -234,7 +234,7 @@ But what about performance? I expected performance to increase with 4K sectors, 
 
 I do believe that the operation in not destructive toward the firmware, so you can try it out yourself. **Still, your mileage may very. Precede at your own risk.**
 
-# Refrences & Sources
+# References & Sources
 
 - [Level1Techs: How to reformat 520 byte drives to 512 bytes (usually)](https://forum.level1techs.com/t/how-to-reformat-520-byte-drives-to-512-bytes-usually/133021)
 - [Wikipedia: Disk Sector](https://en.wikipedia.org/wiki/Disk_sector)
