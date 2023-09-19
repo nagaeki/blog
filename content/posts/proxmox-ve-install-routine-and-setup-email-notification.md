@@ -4,7 +4,6 @@ date: 2023-09-18T21:40:00+09:00
 description: "Know your emergencies in time"
 draft: false
 tags: [self-host]
-featured_image: "/images/posts/proxmox-ve-install-routine-and-setup-email-notification/index.webp"
 ---
 
 These are some basic routines I go over during a Proxmox VE install. Putting them down here so I won't forget about them. Information might change with time.

@@ -2,9 +2,8 @@
 title: "iDRAC 8 Settings and Tricks"
 date: 2023-09-19T18:27:00+09:00
 description: "Got a Dell R730 the other day and found out some things. Putting them down here so I won't forget about them."
-draft: false
+draft: true
 tags: [hardware]
-featured_image: "/images/posts/idrac-8-settings-and-tricks/index.webp"
 ---
 
 Information might change with time. Categories based on left column in iDRAC GUI.
@@ -166,7 +165,13 @@ However there is one problem with this approach as that in extreme circumstances
 
 There is this wonderful docker image on Github [tigerblue77/Dell_iDRAC_fan_controller_Docker](https://github.com/tigerblue77/Dell_iDRAC_fan_controller_Docker) that not only has a second-level response time, but also allows the bios curve to kick in if things get out of hand for the quiet low speed settings.
 
-However, in my own testing, even with a fan speed of just 5%, my two E5-2680 V4s never exceeded 70 degress with max load. **But do not take my word for it. Do your own testing for your hardware's safety.** Still,this approach is much safer. I ended up using this method in the end.
+~~However, in my own testing, even with a fan speed of just 5%, my two E5-2680 V4s never exceeded 70 degress with max load.~~ **But do not take my word for it. Do your own testing for your hardware's safety.**
+
+Turns out I have made a mistake, and the previous test method did not put enough stress on the CPUs. Read about how to properly stress test and check temperatures [here]().
+
+### Fan speed curve, but faster response
+
+
 
 # Storage
 
