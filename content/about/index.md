@@ -17,7 +17,7 @@ hidden: true
 
 本站曾经加入 [internet.nl](https://internet.nl) [双100%名人堂](https://internet.nl/halloffame/)。当前为保证兼容性已不再符合要求。
 
-![internet.nl](/images/about/100-percent-website-test-internet-nl.png)
-![internet.nl](/images/about/100-percent-email-test-internet-nl.png)
+![internet.nl](/images/about/100-percent-website-test-internet-nl.webp)
+![internet.nl](/images/about/100-percent-email-test-internet-nl.webp)
 
 GPG Key available at [gpg_key.txt](/key.txt).

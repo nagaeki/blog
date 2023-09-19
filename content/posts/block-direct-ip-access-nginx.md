@@ -4,7 +4,7 @@ date: 2022-12-27T23:26:06+08:00
 description: "关于群友忘了这件事然后机器人被找到源站被打这件事。"
 draft: false
 tags: [self-host,web]
-featured_image: "/images/posts/block-direct-ip-access-nginx/index.png"
+featured_image: "/images/posts/block-direct-ip-access-nginx/index.webp"
 ---
 
 对于这个问题有三种解决方法：
@@ -73,7 +73,7 @@ featured_image: "/images/posts/block-direct-ip-access-nginx/index.png"
 
 这样处理后，HTTPS请求到源站后不会露出证书。 **这是我选择的方法。** 效果如图，不同浏览器报错不同。
 
-![](/images/posts/block-direct-ip-access-nginx/ssl_error.png)
+![](/images/posts/block-direct-ip-access-nginx/ssl_error.webp)
 
 # 自签SSL证书方法
 

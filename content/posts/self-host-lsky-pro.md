@@ -4,7 +4,7 @@ date: 2022-12-14T19:54:08+08:00
 description: "为朋友的女装找一个新家。"
 draft: false
 tags: [self-host,web]
-featured_image: "/images/posts/self-host-lsky-pro/index.png"
+featured_image: "/images/posts/self-host-lsky-pro/index.webp"
 ---
 
 为什么要自建图床？~~因为我机器在吃灰（逃~~ 因为要给朋友一起用。

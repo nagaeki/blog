@@ -4,7 +4,7 @@ date: 2023-09-18T21:40:00+09:00
 description: "Know your emergencies in time"
 draft: false
 tags: [self-host]
-featured_image: "/images/posts/proxmox-ve-install-routine-and-setup-email-notification/index.jpg"
+featured_image: "/images/posts/proxmox-ve-install-routine-and-setup-email-notification/index.webp"
 ---
 
 These are some basic routines I go over during a Proxmox VE install. Putting them down here so I won't forget about them. Information might change with time.
@@ -64,11 +64,11 @@ Check if your pool is using entire disks - run `zdb` and find `whole_disk`.
 
 It is recommended to point ZFS at an entire disk (ie. /dev/sdx rather than /dev/sdx1), which will automatically create a GPT (GUID Partition Table) and add an 8 MB reserved partition at the end of the disk for legacy bootloaders. [Source: ArchWiki](https://wiki.archlinux.org/title/ZFS#Storage_pools) There is also a reason regarding IO, however I was unable to find documentation sources for this. [Source: Reddit](https://www.reddit.com/r/zfs/comments/enxxyx/formatting_zfs_to_use_whole_disk_vs_partition/)
 
-![Reason to use whole disk - Reddit](/images/posts/proxmox-ve-install-routine-and-setup-email-notification/zfs_whole_disk_reason_reddit.png)
+![Reason to use whole disk - Reddit](/images/posts/proxmox-ve-install-routine-and-setup-email-notification/zfs_whole_disk_reason_reddit.webp)
 
 Also, I don't like the look of having boot & EFI & ZFS partitions on a single disk, so I would rather have dedicated disks for storage.
 
-![Partition vs Whole Disk](/images/posts/proxmox-ve-install-routine-and-setup-email-notification/zfs_partition_vs_whole_disk.png)
+![Partition vs Whole Disk](/images/posts/proxmox-ve-install-routine-and-setup-email-notification/zfs_partition_vs_whole_disk.webp)
 
 I use mirrored setups for this - not RAIDZ. Reasons have been listed above.
 

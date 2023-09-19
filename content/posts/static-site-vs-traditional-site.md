@@ -3,7 +3,7 @@ title: "网站走向静态化"
 date: 2023-02-12T22:24:17+08:00
 description: "从 WordPress 走向 Hugo 的选择。"
 tags: [web]
-featured_image: "/images/posts/static-site-vs-traditional-site/index.png"
+featured_image: "/images/posts/static-site-vs-traditional-site/index.webp"
 draft: false
 comment : false
 hidden: false

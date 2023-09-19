@@ -39,7 +39,7 @@ name = "RSS"
 weight = 6
 
 [params]
-favicon = "/images/favicon.jpg"
+favicon = "/images/favicon.webp"
 cloudflareToken = "bc27981a495345ea8773c82df6c55aaa"
 
 [markup]

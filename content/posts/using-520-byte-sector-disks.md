@@ -4,7 +4,7 @@ date: 2023-09-18T17:07:00+09:00
 description: "Getting better hardware at reduced costs"
 draft: false
 tags: [hardware]
-featured_image: "/images/posts/using-520-byte-sector-disks/index.jpg"
+featured_image: "/images/posts/using-520-byte-sector-disks/index.webp"
 ---
 
 Bought some dirt cheap used enterprise SSDs on Yahoo Auction, only to be not able to do anything with them. The 520 byte sector problem.
@@ -27,7 +27,7 @@ Sometimes 528 byte sectors are also used though less common in my experience. Fo
 
 The problem is simple - it's not normal. Linux cannot read disks formatted with 520-byte sectors. (Nor does Windows.) If you try to use linux with 520 byte sector drive, run dmesg and you might see the following error:
 
-![dmesg error observed on linux](/images/posts/using-520-byte-sector-disks/linux_dmesg_unsupported_sector_size_520.png)
+![dmesg error observed on linux](/images/posts/using-520-byte-sector-disks/linux_dmesg_unsupported_sector_size_520.webp)
 
 [Source: youtube.com/@ArtofServer](https://youtu.be/DAaTfv96V9w?t=183)
 
