@@ -14,11 +14,15 @@ featured_image: "/images/posts/block-direct-ip-access-nginx/index.webp"
 
 三种方法对 HTTP, HTTPS 都适用（为什么不呢）。
 
+# Update 2023/09/19
+
+Configuration snippets as well as automatic installer script available on [my Github](https://github.com/nagaeki/nginx-conf)
+
 # ssl_reject_handshake 方法
 
 ## 安装可用的Nginx版本
 
-首先需要确定安装的是Nginx 1.19.4及以上版本，可使用nginx -v命令查看。
+首先需要确定安装的是Nginx 1.19.4及以上版本，可使用 `nginx -v 命令查看。
 
 处理此问题时Debian Stable仍在发行1.18.0版本，因此使用Nginx官网源安装新版。参考 [Nginx官网安装步骤](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)。
 
