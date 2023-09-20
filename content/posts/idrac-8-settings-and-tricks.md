@@ -123,6 +123,10 @@ Enable IPMI Over LAN - mentioned previously [here](#ipmitool).
 
 Here you can change user passwords as well as upload ssh key files.
 
+## Update and Rollback
+
+This is not apparent, but the function to automatically search for firmware updates for your currently installed hardware does exist. For file location choose `HTTPS`, and for HTTPS address use `downloads.dell.com`. Wait for it to load, and then you can forget about finding all the update files one by one.
+
 # Hardware
 
 ## Fan
