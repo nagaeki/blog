@@ -1,8 +1,8 @@
 ---
 title: "iDRAC 8 Settings and Tricks"
-date: 2023-09-19T18:27:00+09:00
+date: 2023-09-20T18:27:00+09:00
 description: "Got a Dell R730 the other day and found out some things. Putting them down here so I won't forget about them."
-draft: true
+draft: false
 tags: [hardware]
 ---
 
@@ -167,10 +167,11 @@ There is this wonderful docker image on Github [tigerblue77/Dell_iDRAC_fan_contr
 
 ~~However, in my own testing, even with a fan speed of just 5%, my two E5-2680 V4s never exceeded 70 degress with max load.~~ **But do not take my word for it. Do your own testing for your hardware's safety.**
 
-Turns out I have made a mistake, and the previous test method did not put enough stress on the CPUs. Read about how to properly stress test and check temperatures [here]().
+Turns out I have made a mistake, and the previous test method did not put enough stress on the CPUs.
 
-### Fan speed curve, but faster response
+### Faster responses
 
+In the end I have decided to write a little script myself to regulate the fan speeds based on temperature thresholds. Find more about it in the post [Fancontrol Script for Dell iDRAC](/posts/fancontrol-script-for-dell-idrac).
 
 
 # Storage
