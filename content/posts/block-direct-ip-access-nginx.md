@@ -16,7 +16,7 @@ featured_image: "/images/posts/block-direct-ip-access-nginx/index.webp"
 
 # Update 2023/09/19
 
-Configuration snippets as well as automatic installer script available on [my Github](https://github.com/nagaeki/nginx-conf)
+Configuration snippets as well as automatic installer script available on [my Github](https://github.com/nagaeki/nginx-config)
 
 # ssl_reject_handshake 方法
 
