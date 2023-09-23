@@ -167,6 +167,34 @@ If you need to fix it, you can find it at Datacenter -> Permissions -> Users -> 
 
 To test them out, just pull your drives out and wait for a email alert to arrive.
 
+## Enable PCI-E passthrough
+
+Make your modifications using the commmand line.
+
+Follow these guides:
+
+- [ServeTheHome: How to Pass-through PCIe NICs with Proxmox VE on Intel and AMD](https://www.servethehome.com/how-to-pass-through-pcie-nics-with-proxmox-ve-on-intel-and-amd/)
+- [Proxmox Documentation: PCI(e) Passthrough](https://pve.proxmox.com/wiki/PCI(e)_Passthrough)
+- [Proxmox Documentation: PCI Passthrough](https://pve.proxmox.com/wiki/PCI_Passthrough)
+
+## Disable Conntrack for asymmetrical routes
+
+Create / modify `/etc/pve/nodes/<nodename>/host.fw` and add the following:
+
+```
+[OPTIONS]
+ 
+nf_conntrack_allow_invalid: 1
+```
+
+Then restart the Proxmox VE firewall.
+
+```
+pve-firewall stop && pve-firewall start
+```
+
+Source: [blog.swineson.me](https://blog.swineson.me/zh/an-analysis-of-proxmox-ve-vm-outbound-packets-dropped-under-asymmetric-routing/)
+
 # References & Sources
 
 - [Proxmoxのpostfixを設定する](https://zenn.dev/yakumo/articles/2919b755c6ce7a)
@@ -184,3 +212,7 @@ To test them out, just pull your drives out and wait for a email alert to arrive
 - [ArchWiki: ZFS](https://wiki.archlinux.org/title/ZFS)
 - [Level1Linux@YouTube: What Is ZFS?: A Brief Primer](https://youtu.be/lsFDp-W1Ks0)
 - [Techno Tim@YouTube: Set up alerts in Proxmox before it's too late!](https://youtu.be/85ME8i4Ry6A)
+- [ServeTheHome: How to Pass-through PCIe NICs with Proxmox VE on Intel and AMD](https://www.servethehome.com/how-to-pass-through-pcie-nics-with-proxmox-ve-on-intel-and-amd/)
+- [Proxmox Documentation: PCI(e) Passthrough](https://pve.proxmox.com/wiki/PCI(e)_Passthrough)
+- [Proxmox Documentation: PCI Passthrough](https://pve.proxmox.com/wiki/PCI_Passthrough)
+- [blog.swineson.me: Proxmox VE中虚拟机非对等路由出站数据包被丢的情况分析](https://blog.swineson.me/zh/an-analysis-of-proxmox-ve-vm-outbound-packets-dropped-under-asymmetric-routing/)
