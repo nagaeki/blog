@@ -183,7 +183,6 @@ Create / modify `/etc/pve/nodes/<nodename>/host.fw` and add the following:
 
 ```
 [OPTIONS]
- 
 nf_conntrack_allow_invalid: 1
 ```
 
