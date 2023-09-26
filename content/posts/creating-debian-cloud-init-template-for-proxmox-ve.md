@@ -101,42 +101,18 @@ Right-click the VM on the left side, and choose "convert to template". Wait for 
 
 To use the template, right-click again on the template, and choose "clone". Name your VM, set a VM ID, and remember to set it to "Full Clone", so the VM does not rely on the template.
 
-Now we can go to the new VM -> Cloud-Init, and set your user password, ssh public keys, and networking. Remember to set them so you don't get locked out like I did.
+Now we can go to the new VM -> Cloud-Init, and set your user name to root, root password, ssh public keys, and networking. Remember to set them so you don't get locked out like I did.
 
 Start the VM when you feel ready.
 
 # Final touches
 
-Go to Console. If you see "starting serial terminal on interface serial0", just press enter and the console will load. Wait for cloud-init to finish loading, and then ssh into the VM with username "debian" and the password you chose. You did set it, right? Right?
+Go to Console. If you see "starting serial terminal on interface serial0", just press enter and the console will load. Wait for cloud-init to finish loading, and then ssh into the VM with username "root" and the password / ssh key you chose. You did set it, right? Right?
 
 Install qemu-guest-agent and enable it.
 
 ```
 apt install qemu-guest-agent && systemctl start qemu-guest-agent
-```
-
-Allow ssh login as root. Switch to root
-
-```
-sudo -i
-```
-
-Set root user password and set root user ssh key files.
-
-```
-passwd
-```
-
-Move your old ssh public keys so the root account accepts them.
-
-```
-cp /home/debian/.ssh/authorized_keys /root/.ssh && systemctl restart sshd
-```
-
-Delete the default user for peace of mind, as I never use it.
-
-```
-deluser --remove-all-files debian
 ```
 
 # References & Sources
