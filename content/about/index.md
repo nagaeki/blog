@@ -20,4 +20,4 @@ hidden: true
 ![internet.nl](/images/about/100-percent-website-test-internet-nl.webp)
 ![internet.nl](/images/about/100-percent-email-test-internet-nl.webp)
 
-GPG Key available at [gpg_key.txt](/key.txt).
+GPG Key available at [key.txt](/key.txt).
