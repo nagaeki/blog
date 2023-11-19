@@ -90,6 +90,10 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 I have my own email server with [mailcow](https://mailcow.email/). If you use a different server / provider, your settings may vary.
 
+### Set email from address
+
+Go to Datacenter -> Options -> "Email from address". Enter your email from address here.
+
 ### Get prerequisites
 
 ```
