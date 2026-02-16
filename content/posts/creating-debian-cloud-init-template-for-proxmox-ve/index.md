@@ -3,9 +3,8 @@ title: "Creating Debian Cloud-init Template for Proxmox VE"
 date: 2023-09-21T19:33:53+09:00
 description: "Hassle-free deplayment"
 tags: [self-host]
-#featured_image: "/images/creating-debian-cloud-init-template-for-proxmox-ve/index.webp"
+#featured_image: "featured_image.webp"
 draft: false
-comment : false
 hidden: false
 ---
 
@@ -17,29 +16,29 @@ Debian actually provides cloud-init ready images for deploying now, so it is eve
 
 Firstly we will need to create a VM as the basis of operations. Click `Create VM` on the top right corner. Then we just follow the interactive guide provided by the GUI.
 
-![General tab](/images/posts/creating-debian-cloud-init-template-for-proxmox-ve/create_vm_general.webp)
+![General tab](images/create_vm_general.webp)
 
 Make sure to check the `Advanced` box to have all options show up.
 
 Set your instance name and ID as you wish, and check `Start at boot` if you want it to do so, which you probably do. This will not boot the template, but any VMs you have created from it.
 
-![OS tab](/images/posts/creating-debian-cloud-init-template-for-proxmox-ve/create_vm_os.webp)
+![OS tab](images/create_vm_os.webp)
 
 Select `Do not use any media` for the OS image, as we will not be installing by hand, but rather by importing a ready-made image.
 
-![System tab](/images/posts/creating-debian-cloud-init-template-for-proxmox-ve/create_vm_system.webp)
+![System tab](images/create_vm_system.webp)
 
 Check `Qemu Agent`, and leave everything as is in the image. Qemu Agents will allow for extra operations from the host. `VirtIO SCSI single` should be used, as it has the best performance, stated [here](https://pve.proxmox.com/wiki/Qemu/KVM_Virtual_Machines#qm_virtual_machines_settings).
 
-![Disks tab](/images/posts/creating-debian-cloud-init-template-for-proxmox-ve/create_vm_disks.webp)
+![Disks tab](images/create_vm_disks.webp)
 
 Delete the disk Proxmox VE has created for you by default, as we will not be needing it.
 
-![Disks tab](/images/posts/creating-debian-cloud-init-template-for-proxmox-ve/create_vm_disks_deleted.webp)
+![Disks tab](images/create_vm_disks_deleted.webp)
 
 This is how it should look like after you have deleted the disk.
 
-![CPU tab](/images/posts/creating-debian-cloud-init-template-for-proxmox-ve/create_vm_cpu.webp)
+![CPU tab](images/create_vm_cpu.webp)
 
 Regarding the CPU type,
 

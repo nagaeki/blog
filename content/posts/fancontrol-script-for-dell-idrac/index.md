@@ -2,8 +2,10 @@
 title: "Fancontrol Script for Dell iDRAC"
 date: 2023-09-20T21:45:00+09:00
 description: "Telling your noise friend to shut up"
-draft: false
 tags: [hardware]
+#featured_image: "featured_image.webp"
+draft: false
+hidden: false
 ---
 
 I have looked into some solutions for my noisy Dell PowerEdge R730 in the post [iDRAC 8 Settings and Tricks](/posts/idrac-8-settings-and-tricks). This is the solution I have come up in the end.

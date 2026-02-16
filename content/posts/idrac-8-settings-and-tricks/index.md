@@ -2,8 +2,10 @@
 title: "iDRAC 8 Settings and Tricks"
 date: 2023-09-20T18:27:00+09:00
 description: "Got a Dell R730 the other day and found out some things. Putting them down here so I won't forget about them."
-draft: false
 tags: [hardware]
+#featured_image: "featured_image.webp"
+draft: false
+hidden: false
 ---
 
 Information might change with time. Categories based on left column in iDRAC GUI.
@@ -76,7 +78,7 @@ Firstly enable `Alerts` in the top.
 
 For `Alert Filters`, I would uncheck `Info` because it's often not that important. Then check what alerts you wish in the table down below. Note that you need to do this for every page. With `Info` unchecked, that will be 13 pages.
 
-![Alerts Page Example](/images/posts/idrac-8-settings-and-tricks/idrac_alerts_page.webp)
+![Alerts Page Example](images/idrac_alerts_page.webp)
 
 ### SNMP and Email Settings
 

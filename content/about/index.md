@@ -4,20 +4,21 @@ draft: false
 hidden: true
 ---
 
-准备有兴趣就继续写下去。
+Will keep updating as long as I'm interested.
 
-本站使用 [Hugo](https://gohugo.io/) 构建，应用了 [Diary](https://github.com/amazingrise/hugo-theme-diary) 主题 by [Rise](https://risehere.net/)。
-文件托管于 [LiteServer B.V.](https://clients.liteserver.nl/aff.php?aff=571)。
+This site is built with [Hugo](https://gohugo.io/) , and is using the theme [Diary](https://github.com/amazingrise/hugo-theme-diary) by [Rise](https://risehere.net/).
 
-喜欢猫猫。对各种各样的东西都感兴趣，会尽量尝试。
+Files were on [LiteServer B.V.](https://clients.liteserver.nl/aff.php?aff=571). They are still used and recommended by me for their stability and performance. This site is now built by [Cloudflare Pages](https://pages.cloudflare.com).
 
-需要找到我？
-- [i@eki.moe](mailto:i@eki.moe)
-- Telegram: [@nagaeki](https://nagaeki.t.me/)
+I am a cat person. Am interested in new kinds of things and will attempt to try them.
 
-本站曾经加入 [internet.nl](https://internet.nl) [双100%名人堂](https://internet.nl/halloffame/)。当前为保证兼容性已不再符合要求。
+Need to contact me?
+- mailto: i at eki dot moe
+- Telegram: Durov banned me so I no longer have a Telegram account.
 
-![internet.nl](/images/about/100-percent-website-test-internet-nl.webp)
-![internet.nl](/images/about/100-percent-email-test-internet-nl.webp)
+This site was in the [internet.nl](https://internet.nl) [Hall of Fame](https://internet.nl/halloffame/). However, for compatibility reasons this is no longer the case. You can see my [post](/posts/full-score-on-internet-nl/) on this topic.
+
+![internet.nl](images/100-percent-website-test-internet-nl.webp)
+![internet.nl](images/100-percent-email-test-internet-nl.webp)
 
 GPG Key available at [key.txt](/key.txt).

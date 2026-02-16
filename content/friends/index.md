@@ -4,8 +4,8 @@ draft: false
 hidden: true
 ---
 
-我的一些朋友
+Some of my friends.
 
-| 名称 | 链接 |
+| Name | Link |
 | --- | --- |
 | gzx7301的blog | https://gzx7301.top/ |

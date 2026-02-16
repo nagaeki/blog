@@ -2,9 +2,10 @@
 title: "部署 Lsky-Pro 自建图床搭配 nsfwjs 自动审核"
 date: 2022-12-14T19:54:08+08:00
 description: "为朋友的女装找一个新家。"
-draft: false
 tags: [self-host,web]
-featured_image: "/images/posts/self-host-lsky-pro/index.webp"
+featured_image: "featured_image.webp"
+draft: false
+hidden: false
 ---
 
 为什么要自建图床？~~因为我机器在吃灰（逃~~ 因为要给朋友一起用。

@@ -1,8 +1,8 @@
 baseURL = 'https://eki.moe/'
-DefaultContentLanguage = "zh"
-languageCode = 'zh-cn'
+DefaultContentLanguage = "en"
+languageCode = 'en-us'
 title = "Eki's Home"
-copyright = "2023 Eki"
+copyright = "Eki"
 theme = "diary"
 
 [taxonomies]
@@ -39,7 +39,7 @@ name = "RSS"
 weight = 6
 
 [params]
-favicon = "/images/favicon.webp"
+favicon = "favicon.webp"
 cloudflareToken = "bc27981a495345ea8773c82df6c55aaa"
 
 [markup]

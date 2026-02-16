@@ -3,9 +3,8 @@ title: "在 internet.nl 上拿到满分"
 date: 2023-02-13T17:05:14+08:00
 description: "但是真的那么有用吗？"
 tags: [web,self-host]
-featured_image: "/images/posts/full-score-on-internet-nl/index.webp"
+featured_image: "featured_image.webp"
 draft: false
-comment : false
 hidden: false
 ---
 
@@ -97,7 +96,7 @@ TLS 版本安全性表格：
 
 同时，如果使用了 Cloudflare CDN，我还需要在 Cloudflare 的面板中调整以下设置
 
-![](/images/posts/full-score-on-internet-nl/cloudflare_tls_version.webp)
+![](images/cloudflare_tls_version.webp)
 
 ### Ciphers (Algorithm selections)
 

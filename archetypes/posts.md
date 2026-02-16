@@ -3,8 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: ""
 tags: []
-featured_image: "/images/"
+featured_image: "featured_image.webp"
 draft: true
-comment : false
 hidden: false
 ---
