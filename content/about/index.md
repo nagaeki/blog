@@ -21,4 +21,6 @@ This site was in the [internet.nl](https://internet.nl) [Hall of Fame](https://i
 ![internet.nl](images/100-percent-website-test-internet-nl.webp)
 ![internet.nl](images/100-percent-email-test-internet-nl.webp)
 
-GPG Key available at [key.txt](/key.txt).
+~~GPG Key available at [key.txt](/key.txt).~~
+
+I no longer use GPG keys for encrypting email, because I am not skilled enough to deal with them, but also because I do not see the need for them in my conditions, where I host my own email. If you are concerned about email privacy on your side, try using an end-to-end encrypted email provider.
