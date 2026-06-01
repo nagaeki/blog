@@ -4,8 +4,8 @@ draft: false
 hidden: true
 ---
 
-Some of my friends.
+Some people that I know.
 
 | Name | Link |
 | --- | --- |
-| gzx7301的blog | https://gzx7301.top/ |
+| moecast.blog | https://blog.cas7.moe/ |

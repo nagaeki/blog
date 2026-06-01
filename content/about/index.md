@@ -6,7 +6,9 @@ hidden: true
 
 Will keep updating as long as I'm interested.
 
-This site is built with [Hugo](https://gohugo.io/) , and is using the theme [Diary](https://github.com/amazingrise/hugo-theme-diary) by [Rise](https://risehere.net/).
+Not all posts should be treated as guide. Some of them are only written down to refresh my memory in case I forget them, and have to spend several hours researching them again, only to try to remember why I made the choices I did.
+
+This site is built with [Hugo](https://gohugo.io/), and is using the theme [Diary](https://github.com/amazingrise/hugo-theme-diary) by [Rise](https://risehere.net/).
 
 Files were on [LiteServer B.V.](https://clients.liteserver.nl/aff.php?aff=571). They are still used and recommended by me for their stability and performance. This site is now built by [Cloudflare Pages](https://pages.cloudflare.com).
 
