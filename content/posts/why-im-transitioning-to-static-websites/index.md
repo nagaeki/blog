@@ -299,3 +299,7 @@ An easier way to do this exists, if you do not wish to fetch and merge in the su
 git submodule update --remote
 git submodule update --remote submodule_name # when only updating one submodule
 ```
+
+# Closing thoughts
+
+That was a lot. I hope the time spent organizing this was worth it, since the probability of me just forgetting this post existing is not zero. Also, it occured to me that proficiency in using Git is just as important, even if I don't do much software development, just because it's such a great tool. Make sure to read the [Pro Git book](https://git-scm.com/book/en/v2)!
