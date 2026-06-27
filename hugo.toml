@@ -1,8 +1,8 @@
 baseURL = 'https://eki.moe/'
 DefaultContentLanguage = "en"
 languageCode = 'en-us'
-title = "Eki's Home"
-copyright = "Eki"
+title = "eki's Home"
+copyright = "eki"
 theme = "diary"
 
 [taxonomies]
