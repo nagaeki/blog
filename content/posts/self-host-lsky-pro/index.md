@@ -2,7 +2,7 @@
 title: "部署 Lsky-Pro 自建图床搭配 nsfwjs 自动审核"
 date: 2022-12-14T19:54:08+08:00
 description: "为朋友的女装找一个新家。"
-tags: [self-host,web]
+tags: [self-host, web]
 featured_image: "featured_image.webp"
 draft: true
 hidden: false

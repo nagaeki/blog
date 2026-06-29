@@ -2,7 +2,7 @@
 title: "Blocking Direct IP Access to Nginx"
 date: 2022-12-27T23:26:06+08:00
 description: "For the time a friend forgetting this and got DDoSed"
-tags: [self-host,web]
+tags: [self-host, web]
 featured_image: "featured_image.webp"
 draft: false
 hidden: false

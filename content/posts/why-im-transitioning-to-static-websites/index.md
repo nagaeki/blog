@@ -158,7 +158,7 @@ Of course, you would use git for source control on your content. Here we can add
 To add a new page to the project's content, you would use the following command.
 
 ```
-hugo new content content/posts/my-first-post.md
+hugo new content/posts/my-first-post.md
 ```
 
 Hugo will create the file to the path do designated, from the [archetype](https://gohugo.io/content-management/archetypes/) you chose, which is in this instance `posts`.
