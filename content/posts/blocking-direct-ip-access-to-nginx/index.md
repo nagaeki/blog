@@ -12,11 +12,11 @@ hidden: false
 
 ## 2026/06/19
 
->I have mainly rewritten this post, both to reflect the changes in software solutions, as well as to provide more understandable language and clearer instructions.
+> I have mainly rewritten this post, both to reflect the changes in software solutions, as well as to provide more understandable language and clearer instructions.
 
 ## 2023/09/19
 
->Configuration snippets as well as automatic installer script available on [my Github](https://github.com/nagaeki/nginx-config)
+> Configuration snippets as well as automatic installer script available on [my Github](https://github.com/nagaeki/nginx-config)
 
 > Note: This post uses "SSL handshake" and "TLS handshake" interchangeably.
 
