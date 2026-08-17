@@ -5,6 +5,8 @@ title = "eki's Home"
 copyright = "eki"
 theme = "diary"
 
+enableGitInfo = true
+
 [taxonomies]
    tag = "tags"
 
