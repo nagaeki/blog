@@ -83,7 +83,9 @@ I used to have two 100GB S3700 drives as my boot drive, however after the chassi
 
 The 16GB Optane drives were a good enough choice for TrueNAS installs. The downsides to it are its size and the fact that it takes PCIe channels. However, with TrueNAS version 26, the minimum requirement for the boot device has increased from 16GB in version 25 ([Source](https://www.truenas.com/docs/scale/25.10/gettingstarted/scalehardwareguide/)) to 20GB ([Source](https://www.truenas.com/docs/scale/26/gettingstarted/tnhardwareguide/)), which means that it is probably not a suitable choice anymore.
 
-Between the Intel S3700 and the Micron 5100 Pro, both of them are great choices for this role. However, for the simple fact that I cannot fit two of them in this chassis, I have chosen to go with two 5100 Pros on adapter cards.
+Between the Intel S3700 and the Micron 5100 Pro, both of them are great choices for this role. ~However, for the simple fact that I cannot fit two of them in this chassis, I have chosen to go with two 5100 Pros on adapter cards.~
+
+> Update 2026/08/19: I just realized that there is enough space near the PSU to have one or two SATA SSDs dangling in there. This means that I get to keep two 2.5 inch drives inside the chassis, as well as M.2 drives on the adapter cards. I plan to keep the S3700s as boot drives, while utilizing the M.2 slots for ZFS special device. It will only contain metadata and no small blocks, so even 240GB should be enough for a home setup up to 150TB or even 200TB, maybe more if you have larger record sizes. ([Source](https://forum.level1techs.com/t/zfs-metadata-special-device-real-world-perf-demo/191533)) Using M.2 instead of 2.5 SAS/SATA SSDs for this purpose relieves precious 2.5/3.5 inch drive bays, so I can fit 8 3.5 inch HDDs instead of only 6 and giving up two for the special VDEV.
 
 Again, if I didn't have these drives on hand, I will go with random but good enough drives on the second hand market, so there is no need to stress about getting the same or better drives just for boot.
 
