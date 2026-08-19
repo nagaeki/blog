@@ -2,7 +2,7 @@
 title: "Creating Debian Cloud-init Template for Proxmox VE"
 date: 2023-09-21T19:33:53+09:00
 description: "Hassle-free deplayment"
-tags: [self-host]
+tags: [self-host, proxmox]
 #featured_image: "featured_image.webp"
 draft: false
 hidden: false

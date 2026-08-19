@@ -2,7 +2,7 @@
 title: "Proxmox VE Install Routine and Setup Email Notification"
 date: 2023-09-18T21:40:00+09:00
 description: "Know your emergencies in time"
-tags: [self-host]
+tags: [self-host, proxmox]
 #featured_image: "featured_image.webp"
 draft: false
 hidden: false
