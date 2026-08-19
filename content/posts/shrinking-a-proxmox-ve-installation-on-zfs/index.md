@@ -66,6 +66,8 @@ The solution I came up to get around this consists of the following steps.
 
 > naa0yama's blog shows that you can detach one of the mirrors and attach a new disk to create a new mirror, however this comes with some risk. It also will not work with RAIDZ vdevs as they do not support detaching. The ZFS vdev name also changes from 'mirror-0' to 'mirror-1', which my somewhat OCD brain does not like.
 
+> There are also scripts that help against this, such as this one: [Reddit](https://www.reddit.com/r/Proxmox/comments/1cr6wn7/tutorial_howto_migrate_a_pve_zfs_bootroot_mirror/), [GitHub](https://github.com/kneutron/ansitest/blob/master/proxmox/proxmox-replace-zfs-mirror-boot-disks-with-smaller.sh). You should use it at your own discretion. It also will not work with RAIDZ vdevs.
+
 > Rebooting into a rescue environment instead of doing it live on the system can be more cumbersome, but it has the advantage of not missing any changes between snapshoting and migration.
 
 ## Checking current disks
