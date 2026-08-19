@@ -10,11 +10,19 @@ hidden: false
 
 These are some basic routines I go over during a Proxmox VE install. Putting them down here so I won't forget about them. Information might change with time.
 
+# Updates
+
+## 2026/08/19
+
+> I am no longer using separate disks for VMs for a long while. This post is updated to reflect that. More info is also added about reserving space at the end of the disk, as well as the new Proxmox VE notification system. The email setup part of this post is now obsolete.
+
 # Install
 
 ## File System
 
-During install you get to choose which file system you want to use. I'm going with a ZFS mirrored (RAID1) setup for Proxmox VE itself. Note that by saying Proxmox VE itself, I mean that VMs / Containers will run on other disks. Will touch on this later.
+During install you get to choose which file system you want to use. I'm going with a ZFS mirrored (RAID1) setup for Proxmox VE itself. ~Note that by saying Proxmox VE itself, I mean that VMs / Containers will run on other disks. Will touch on this later.~
+
+> This is no longer true. I am using a single pool for both the OS and VMs. I will elaborate more about this [here](#creating-another-zpool-for-vms-and-containers).
 
 Why ZFS? Basically, it's great. If you want to know more about it, check out -
 
@@ -23,7 +31,7 @@ Why ZFS? Basically, it's great. If you want to know more about it, check out -
 
 ### Why mirrored
 
-- Losing one ssd on Proxmox is acceptable. I do not expect to lose both SSDs at the same time.
+- Losing one ssd on Proxmox VE is acceptable. I do not expect to lose both SSDs at the same time.
 - RAIDZ needs at least 3 drives, while mirroring only needs 2.
 - For workloads prioritizing IOPs, more VDEVs are preferred. Though this might not matter for Proxmox VE itself, it does matter for VMs and their pool, as will be discussed later.
 
@@ -47,7 +55,7 @@ Leave as-is.
 
 #### hdsize
 
-Normally it should be left at default, as this will let ZFS use all the free space it can use. However, if you want to leave some space for partitioning later, you can set it here. For example, because of complications regarding swap on ZFS (you shouldn't), leave some space to add a swap partition later.
+Normally it should be left at default, as this will let ZFS use all the free space it can use. However, if you want to leave some space for partitioning later, you can set it here. For example, because of complications regarding swap on ZFS (you shouldn't), leave some space to add a swap partition later. It could also help in the case where you might have the possibility of needing to replace the drive with a smaller one, as stocks of the exact same drive are not guaranteed from a homelab perspective. Read more about this specific problem here: [Shrinking a Proxmox VE Installation on ZFS](/posts/shrinking-a-proxmox-ve-installation-on-zfs).
 
 ## Email
 
@@ -55,23 +63,39 @@ Set it to a email address you own, as alerts will be sent here. This can be modi
 
 ## Hostname
 
-This can **not** be modified later.
+This **cannot** be modified later.
+
+> Although the hostname cannot be modified later, the domain can still be changed.
 
 # After Install
 
 ## Creating another zpool for VMs and Containers
 
-Check if your pool is using entire disks - run `zdb` and find `whole_disk`.
+~Check if your pool is using entire disks - run `zdb` and find `whole_disk`.~
 
-It is recommended to point ZFS at an entire disk (ie. /dev/sdx rather than /dev/sdx1), which will automatically create a GPT (GUID Partition Table) and add an 8 MB reserved partition at the end of the disk for legacy bootloaders. [Source: ArchWiki](https://wiki.archlinux.org/title/ZFS#Storage_pools) There is also a reason regarding IO, however I was unable to find documentation sources for this. [Source: Reddit](https://www.reddit.com/r/zfs/comments/enxxyx/formatting_zfs_to_use_whole_disk_vs_partition/)
+~It is recommended to point ZFS at an entire disk (ie. /dev/sdx rather than /dev/sdx1), which will automatically create a GPT (GUID Partition Table) and add an 8 MB reserved partition at the end of the disk for legacy bootloaders. [Source: ArchWiki](https://wiki.archlinux.org/title/ZFS#Storage_pools) There is also a reason regarding IO, however I was unable to find documentation sources for this. [Source: Reddit](https://www.reddit.com/r/zfs/comments/enxxyx/formatting_zfs_to_use_whole_disk_vs_partition/)~
+
+> This is not entirely true. The 'performance' part this mentions is about 4K alignment, and as long as that is done correctly, which the installer should do when partitioning, there shouldn't be any problem with performance.
 
 ![Reason to use whole disk - Reddit](images/zfs_whole_disk_reason_reddit.webp)
 
-Also, I don't like the look of having boot & EFI & ZFS partitions on a single disk, so I would rather have dedicated disks for storage.
+~Also, I don't like the look of having boot & EFI & ZFS partitions on a single disk, so I would rather have dedicated disks for storage.~
 
 ![Partition vs Whole Disk](images/zfs_partition_vs_whole_disk.webp)
 
-I use mirrored setups for this - not RAIDZ. Reasons have been listed above.
+~I use mirrored setups for this - not RAIDZ. Reasons have been listed above.~
+
+I am still using mirrored setups for Proxmox VE. Mirrors generally offer better random I/O performance than RAIDZ vdevs, making them a better fit for VM storage. While 50% storage effiency might seem low if you're used to no redundancy at all, it is still good enough. Also, VMs don't really take up that much space, as long as you have a separate NAS or even just a separate ZFS pool with HDDs that utilize RAIDZ.
+
+However, I am no longer using separate pools for the OS itself and VM disks. In theory, it is a good idea to separate the operating system from the stored data to help with backups and recovery. However, I find that with Proxmox VE, it is not really necessary while adding complexity. Proxmox VE offers ample options for easily backing up and restoring VMs, while a significant portion of the system's configuration is synced across the cluster. As long as you keep note of changes made that is not synced and the network settings, recreating the system should be easy.
+
+I consider it to be unnecessary complexity because having separate pools won't necessarily make recovery easier. Having both disks fail in a mirror is rare. Having only the system pool fail while the data pool stay intact is an even rarer specific failure scenario. What's more common is SMART errors being neglected, or PSU related hardware failures causing all drives in the chassis to fail. Of course, there is the possibility that there is crucial data on the system, where the difference between backups are important enough. However, separation does not really eliminate this risk, since both of the drives in the data pool could still fail, while the separate system pool introduces another independent storage failure domain that also needs to be maintained and recovered.
+
+Another advantage to separation that is often brought up is ease of reinstalls. However, as mentioned above, Proxmox VE makes backups and restoring them really easy. Assuming you should have a backup target configured, reinstalling a host without a cluster is as simple as restoring from a backup, and with a cluster it is even simpler as a migration between hosts.
+
+Finally, it is sometimes said that separation can help with reducing costs, as the boot drive can utilize lower grade hardware. However, that is only inherently true in systems that typically separate between OS and data, such as NAS systems. With Proxmox VE, sharing the same pool can actually help with costs, as you don't need another set of drives, and that means less drive bays. The wear caused by the system is negligible compared to the VMs. This is especially helpful with non-enterprise users, where smaller / rental machines often do not offer dedicated disks for boot, or do not have the drive bays in mini machines. Sharing helps in standardizing the setup across the organization.
+
+Separation is not backups. This is why for a long time, I have turned to a single pool configuration. For my Proxmox installations, I don’t find separate OS and VM pools worth the additional complexity. I’d rather spend the extra money and hardware on backups than on separating the Proxmox installation from VM storage.
 
 ## ZFS trim and scrub
 
@@ -90,7 +114,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 ## Postfix settings so alert emails won't go to spam
 
-I have my own email server with [mailcow](https://mailcow.email/). If you use a different server / provider, your settings may vary.
+~I have my own email server with [mailcow](https://mailcow.email/). If you use a different server / provider, your settings may vary.~
+
+> This part is now obsolete. The new Proxmox VE notification system provides much more elaborate options such as SMTP and Webhook, while also providing syncing the settings between nodes in a cluster. Check out the documentation about this [here](https://pve.proxmox.com/pve-docs/chapter-notifications.html).
 
 ### Set email from address
 

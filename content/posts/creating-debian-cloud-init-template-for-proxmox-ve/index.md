@@ -62,15 +62,19 @@ Next, some operations using ssh / console is needed, as Proxmox VE do not have t
 
 # Readying VM
 
-We will need to manually add a serial console to the VM, otherwise the web console will not work.
+Add a serial console to the VM with this command. Some cloud-init images require a serial console, and I believe that it is the case for Debian as well. This has the added benefit of allowing us to monitor the output from cloud-init, as it is passed to the serial console. You can also use this as a recovery method to the VM from the host's command line using `qm terminal <VM ID>`. If you prefer serial over VGA monitors, you can also set the monitor type for the WebUI using `qm set <VM ID> --vga serial0`.
+
+> Not having this serial console can lead to errors or kernel panic, as the bootloader is configured to output into the serial console by default. This is mentioned [here](https://www.reddit.com/r/Proxmox/comments/1gujajr/first_boot_always_result_in_kernel_panic_on_new/.)
 
 ```
-qm set <VM ID> --serial0 socket --vga serial0
+qm set <VM ID> --serial0 socket
 ```
 
 The Debian team has prepared a variety of cloud images available for download. Goto [https://cloud.debian.org/images/cloud/](https://cloud.debian.org/images/cloud/), and scroll down to find the release of your choice. Personally I prefer the "latest" flavor.
 
 I will download the "genericcloud" "amd64" qcow2 image, as it fits me best.
+
+> From the [Debian Wiki](https://wiki.debian.org/Cloud): Q. What is the difference between the generic and genericcloud images? A. The difference is in the pre-installed kernel; the images are otherwise identical. The generic image uses Debian's standard Linux kernel packages, while the genericcloud image uses the cloud kernel build. The cloud kernel disables a large number of device drivers and primarily targets the Amazon EC2 and Microsoft Azure VM device models. It may be usable in other environments, but for maximum compatibility we recommend using the generic images.
 
 Then we will need to resize the image, otherwise the image will be considered "full", unavailable for any operations.
 
@@ -106,12 +110,12 @@ Start the VM when you feel ready.
 
 # Final touches
 
-Go to Console. If you see "starting serial terminal on interface serial0", just press enter and the console will load. Wait for cloud-init to finish loading, and then ssh into the VM with username "root" and the password / ssh key you chose. You did set it, right? Right?
+Go to Console. If you see "starting serial terminal on interface serial0", just press enter and the console will load. Wait for cloud-init to finish loading, and then ssh into the VM with username "root" and the password / ssh key you chose. If you forgot, delete the instance and spin up another one. Good thing templates are convenient to clone!
 
-Install qemu-guest-agent and enable it.
+Lastly install qemu-guest-agent and enable it.
 
 ```
-apt install qemu-guest-agent && systemctl start qemu-guest-agent
+apt install qemu-guest-agent && systemctl enable qemu-guest-agent --now
 ```
 
 # References & Sources
